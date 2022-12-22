@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Lear React with platzi
+          Lear React platzi
         </a>
       </header>
     </div>
