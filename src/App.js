@@ -1,6 +1,9 @@
 import React from 'react';
 import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
+import { TodoList } from './TodoList';
+import { TodoItem } from './TodoItem';
+import { CreateTodoButton } from './CreateTodoButton';
 
 import './App.css';
 
@@ -14,17 +17,15 @@ function App() {
   return (
     <> {/*tambien se puede hacer React.Fragment*/}
       <TodoCounter />
-      <h2>has completado 2 de 3 todos</h2>
       <TodoSearch />
       
       <TodoList>
-          {todos.map(todo => (
-            <TodoItem />
-          ))}
+        {todos.map(todo => (
+            <TodoItem key={todo.text} text={todo.text}/>
+        ))}
       </TodoList>
       
       <CreateTodoButton />
-      <button></button>
     </>
   );
 }
