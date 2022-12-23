@@ -50,10 +50,10 @@ function App() {
     //newTodos[todoIndex] = {
     // text: todos[todoIndex].text,
     // completed: true
-    };
 
-    setTodos(newTodos);
+      setTodos(newTodos);
   };
+
 
   return (
     <> {/*tambien se puede hacer React.Fragment*/}
@@ -72,7 +72,8 @@ function App() {
             <TodoItem 
               key={todo.text} 
               text={todo.text}
-              completed={() => completeTodos(todo.text)}
+              completed={todo.completed}
+              onComplete={() => completeTodos(todo.text)}
             />
         ))}
       </TodoList>
