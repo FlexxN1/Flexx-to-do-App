@@ -38,6 +38,23 @@ function App() {
     })
   };
 
+  const completeTodos = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text == text);
+    
+    const newTodos = [...todos];
+
+    //otra forma
+    newTodos[todoIndex].completed = true
+
+    //otra forma
+    //newTodos[todoIndex] = {
+    // text: todos[todoIndex].text,
+    // completed: true
+    };
+
+    setTodos(newTodos);
+  };
+
   return (
     <> {/*tambien se puede hacer React.Fragment*/}
       <TodoCounter 
@@ -55,7 +72,7 @@ function App() {
             <TodoItem 
               key={todo.text} 
               text={todo.text}
-              completed={todo.completed}
+              completed={() => completeTodos(todo.text)}
             />
         ))}
       </TodoList>
