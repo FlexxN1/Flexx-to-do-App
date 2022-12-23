@@ -54,7 +54,9 @@ function App() {
       setTodos(newTodos);
   };
 
-    const deleteTodo = (text) => {
+
+  //funcion de eliminar todo
+  const deleteTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
   
     const newTodos = [...todos];
@@ -83,7 +85,7 @@ function App() {
               text={todo.text}
               completed={todo.completed}
               onComplete={() => completeTodo(todo.text)}
-              onDelete={() => completeTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
             />
         ))}
       </TodoList>
