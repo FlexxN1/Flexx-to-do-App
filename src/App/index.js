@@ -63,11 +63,14 @@ function App() {
 
 
   return (
-    <AppUI 
-        total={totalTodos}
-        completed={completedTodos}
-                searchValue={searchValue}
-        setSearchValue={setSearchValue}
+    <AppUI
+      totalTodos={totalTodos}
+      completedTodos={completedTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
     />
   );
 }
