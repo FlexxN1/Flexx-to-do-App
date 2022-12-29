@@ -23,3 +23,10 @@
 .CreateTodoButton:hover {
     transform: rotate(224deg);
 }
+
+@media (min-width: 1000px) {
+    .CreateTodoButton {
+        right: 148px;
+        bottom: 189px;
+    }
+}
