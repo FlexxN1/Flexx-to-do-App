@@ -5,17 +5,18 @@ import { useLocalStorage } from "./useLocalStorage";
 const TodoContext = React.createContext();
 
 function TodoProvider(props){
-    // Nos traemos todo el estado y las funciones de nuestra aplicación que queremos globales
-    // Desestructuramos los nuevos datos de nustro custom hook
-    const {
-        item: todos, 
-        saveItem: saveTodos,
-        loading,
-        error
-    } = useLocalStorage('TODOS_V1', []);
+  // Nos traemos todo el estado y las funciones de nuestra aplicación que queremos globales
+  // Desestructuramos los nuevos datos de nustro custom hook
+  const {
+      item: todos, 
+      saveItem: saveTodos,
+      loading,
+      error
+  } = useLocalStorage('TODOS_V1', []);
 
-    // El estado de nuestra búsqueda
-    const [searchValue, setSearchValue] = React.useState('');
+  // El estado de nuestra búsqueda
+  const [searchValue, setSearchValue] = React.useState('');
+  const [openModal, setOpenModal] = React.useState(false);
 
       // Cantidad de TODOs completados
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -64,17 +65,19 @@ function TodoProvider(props){
 
     return (
         <TodoContext.Provider value={{
-            loading,
-            error,
-            totalTodos,
-            completedTodos,
-            searchValue,
-            setSearchValue,
-            searchedTodos,
-            completeTodo,
-            deleteTodo
+          loading,
+          error,
+          totalTodos,
+          completedTodos,
+          searchValue,
+          setSearchValue,
+          searchedTodos,
+          completeTodo,
+          deleteTodo,
+          openModal,
+          setOpenModal
         }}>
-            {props.children}
+          {props.children}
         </TodoContext.Provider>
     );
 };
