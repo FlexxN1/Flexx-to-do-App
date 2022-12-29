@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Flexx-to-do-App/static/css/main.7f3c0165.css",
+    "main.css": "/Flexx-to-do-App/static/css/main.c5d99b3a.css",
     "main.js": "/Flexx-to-do-App/static/js/main.4cbfdc00.js",
     "index.html": "/Flexx-to-do-App/index.html",
-    "main.7f3c0165.css.map": "/Flexx-to-do-App/static/css/main.7f3c0165.css.map",
+    "main.c5d99b3a.css.map": "/Flexx-to-do-App/static/css/main.c5d99b3a.css.map",
     "main.4cbfdc00.js.map": "/Flexx-to-do-App/static/js/main.4cbfdc00.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f3c0165.css",
+    "static/css/main.c5d99b3a.css",
     "static/js/main.4cbfdc00.js"
   ]
 }
