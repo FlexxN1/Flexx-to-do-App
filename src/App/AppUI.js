@@ -2,6 +2,7 @@ import React from "react";
 import { TodoContext } from '../TodoContext';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
+import { TodoForm } from '../TodoForm';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
@@ -45,7 +46,7 @@ function AppUI(){
             </TodoList>
             {!!openModal && (
                 <Modal>
-                <p>{searchedTodos[0]?.text}</p>
+                    <TodoForm />
                 </Modal>
             )}
 
