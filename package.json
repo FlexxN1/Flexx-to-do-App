@@ -1,5 +1,4 @@
 {
-  "homepage": "https://github.com/FlexxN1/Flexx-to-do-App.git",
   "name": "to-do",
   "version": "0.1.0",
   "private": true,
@@ -40,5 +39,6 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
-  }
+  },
+  "homepage": "https://FlexxN1.github.io/Flexx-to-do-App.git"
 }
