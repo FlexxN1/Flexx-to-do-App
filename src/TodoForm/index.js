@@ -27,10 +27,15 @@ function TodoForm(){
 
         // prevent default para evitar recargar la página
         event.preventDefault();
+        //si no tiene texto, no deja añadir
+        if(newTodoValue.length <= 0)return;
+
         // Utilizamos nuestra función para añadir nuestro TODO
         addTodo(newTodoValue);
+
         // Cerramos nustro modal
-        setOpenModal(true);
+        setOpenModal(false);
+        
         // También estaría bien resetear nuestro formulario
         setNewTodoValue('')
     }

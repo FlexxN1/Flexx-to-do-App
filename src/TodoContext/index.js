@@ -38,9 +38,16 @@ function TodoProvider(props){
 
   // Función para añadir un nuevo TODO
   const addTodo = (text) => {
-    
+
+    //Logica para validar si tiene texto para enviar
+    if (!text.trim()) {
+        alert("El nombre está vacío, escribe algo");
+        return;
+    }
+
     const newTodos = [...todos];
     newTodos.push({
+      id:todos.length + 1,
       completed: false,
       text
     });
