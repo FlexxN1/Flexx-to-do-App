@@ -7,6 +7,9 @@ import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
+import { TodosError } from '../TodosError';
+import { TodosLoading } from '../TodosLoading';
+import { EmptyTodos } from '../EmptyTodos';
 
 function AppUI(){
     const {
@@ -27,11 +30,11 @@ function AppUI(){
             {/* Podemos acceder a nuestro contexto con el consumer */}
             <TodoList>
                 {/* Mostramos un mensaje en caso de que ocurra algún error*/}
-                {error && <p>Desespérate, hubo un error...</p>}
+                {error && <TodosError error={error} />}
                 {/* Mostramos un mensaje de cargando, cuando la aplicación está cargando los datos */}
-                {loading && <p>Estamos cargando, no desesperes...</p>}
+                {loading && <TodosLoading />}
                 {/* Si terminó de cargar y no existen TODOs, se muestra un mensaje para crear el primer TODO */}
-                {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
+                {(!loading && !searchedTodos.length) && <EmptyTodos />}
 
                 {/* Regresamos solamente los TODOs buscados */}
                 {searchedTodos.map(todo => (
