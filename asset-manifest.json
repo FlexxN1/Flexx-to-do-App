@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/git@github.com:FlexxN1/Flexx-to-do-App.git/static/css/main.7f3c0165.css",
+    "main.js": "/git@github.com:FlexxN1/Flexx-to-do-App.git/static/js/main.4cbfdc00.js",
+    "index.html": "/git@github.com:FlexxN1/Flexx-to-do-App.git/index.html",
+    "main.7f3c0165.css.map": "/git@github.com:FlexxN1/Flexx-to-do-App.git/static/css/main.7f3c0165.css.map",
+    "main.4cbfdc00.js.map": "/git@github.com:FlexxN1/Flexx-to-do-App.git/static/js/main.4cbfdc00.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f3c0165.css",
+    "static/js/main.4cbfdc00.js"
+  ]
+}
