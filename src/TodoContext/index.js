@@ -61,8 +61,7 @@ function TodoProvider(props){
     const newTodos = [...todos];
 
     //otra forma
-    newTodos[todoIndex].completed = true
-
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed // por si marco por error el chulo de completado, lo podre desmarcar 
     //otra forma
     //newTodos[todoIndex] = {
     // text: todos[todoIndex].text,
