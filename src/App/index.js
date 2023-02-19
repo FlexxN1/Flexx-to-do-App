@@ -30,7 +30,7 @@ function App() {
   
   return (
     <React.Fragment>
-      <TodoHeader>
+      <TodoHeader loading={loading}>
         <TodoCounter
           totalTodos={totalTodos}
           completedTodos={completedTodos}
@@ -40,7 +40,7 @@ function App() {
           setSearchValue={setSearchValue}
         />
       </TodoHeader>
-      
+
       <TodoList
         error={error}
         loading={loading}
