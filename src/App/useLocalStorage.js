@@ -2,6 +2,8 @@ import React from "react";
 
 function useLocalStorage(itemName,initialValue){
 
+  const [sincronizedItem, setSincronizedItem] = React.useState(true);
+
   // Creamos el estado inicial para nuestros errores y carga
   const [error, setError] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
@@ -25,6 +27,7 @@ function useLocalStorage(itemName,initialValue){
     
             setItem(parsedItem);
             setLoading(false);
+            setSincronizedItem(true);
           } catch (error){
               // En caso de un error lo guardamos en el estado
               setError(error);
@@ -33,7 +36,7 @@ function useLocalStorage(itemName,initialValue){
             setLoading(false);
           }
         }, 1000);
-  }, []);
+  }, [sincronizedItem]);
 
   const saveItem = (newItem)=> {
     // Manejamos la tarea dentro de un try/catch por si ocurre algún error
@@ -52,7 +55,8 @@ function useLocalStorage(itemName,initialValue){
     item,
     saveItem,
     loading,
-    error
+    error,
+    sincronizeItem,
   };
 }
 
