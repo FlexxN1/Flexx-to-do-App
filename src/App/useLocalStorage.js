@@ -24,6 +24,7 @@ function useLocalStorage(itemName,initialValue){
             }
     
             setItem(parsedItem);
+            setLoading(false);
           } catch (error){
               // En caso de un error lo guardamos en el estado
               setError(error);
@@ -31,7 +32,6 @@ function useLocalStorage(itemName,initialValue){
             // También podemos utilizar la última parte del try/cath (finally) para terminar la carga
             setLoading(false);
           }
-
         }, 1000);
   }, []);
 
