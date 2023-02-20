@@ -11,7 +11,7 @@ import { EmptyTodos } from '../EmptyTodos';
 import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
-import { withStorageListener  } from '../ChangeAlert';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert';
 
 function App() {
   const {
@@ -87,6 +87,8 @@ function App() {
       <CreateTodoButton
         setOpenModal={setOpenModal}
       />
+
+      <ChangeAlertWithStorageListener />
     </React.Fragment>
   );
 }

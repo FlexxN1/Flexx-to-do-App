@@ -5,4 +5,6 @@ function ChangeAlert({ show, toggleShow}){
     if(show) return <p> Hubo cambios</p>
 }
 
-export {ChangeAlert};
+const ChangeAlertWithStorageListener = withStorageListener(ChangeAlert);
+
+export { ChangeAlertWithStorageListener };
