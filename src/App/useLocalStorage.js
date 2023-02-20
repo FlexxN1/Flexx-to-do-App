@@ -33,7 +33,7 @@ function useLocalStorage(itemName,initialValue){
           }
 
         }, 1000);
-  });
+  }, []);
 
   const saveItem = (newItem)=> {
     // Manejamos la tarea dentro de un try/catch por si ocurre algún error
