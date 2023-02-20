@@ -35,7 +35,7 @@ function useLocalStorage(itemName,initialValue){
             // También podemos utilizar la última parte del try/cath (finally) para terminar la carga
             setLoading(false);
           }
-        }, 1000);
+        }, 2000);
   }, [sincronizedItem]);
 
   const saveItem = (newItem)=> {
@@ -48,6 +48,11 @@ function useLocalStorage(itemName,initialValue){
       // En caso de algún error lo guardamos en el estado
       setError(error);
     }
+  };
+
+  const sincronizeItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
   };
 
   // Para tener un mejor control de los datos retornados, podemos regresarlos dentro de un objeto
