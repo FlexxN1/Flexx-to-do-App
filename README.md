@@ -1,6 +1,6 @@
 # Flexx-to-do-App 📝✔
 
-Flexx-to-do-App, es una página web, que nos permite guardar ciertas tareas que queramos realizar en el día, y así poder tener un control de ellas, estas tareas permaneceran siempre activas, ya que se está utilizando una técnica para guardar en LocalStorage y asi tener persistencia de los datos.
+Flexx-to-do-App, es una página web, que nos permite guardar ciertas tareas que queramos realizar en el día, y así poder tener un control de ellas, estas tareas permaneceran siempre activas, ya que se está utilizando una técnica para guardar en LocalStorage y asi tener persistencia de los datos, tambien podemos sincronizar los cambios y avisar, que se hagan en otro lado en la aplicacion.
 
 - Puedes filtrar 🔎 y validar ✔ si ya está terminada una tarea.
 
