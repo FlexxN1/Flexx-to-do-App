@@ -1,19 +1,20 @@
 import React from 'react';
-import { useTodos } from './useTodos';
-import { TodoHeader } from '../TodoHeader';
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import { TodosError } from '../TodosError';
-import { TodosLoading } from '../TodosLoading';
-import { EmptyTodos } from '../EmptyTodos';
-import { TodoForm } from '../TodoForm';
-import { CreateTodoButton } from '../CreateTodoButton';
-import { Modal } from '../Modal';
-import { ChangeAlertWithStorageListener } from '../ChangeAlert';
 
-function App() {
+import { useTodos } from '../useTodos';
+import { TodoHeader } from '../../Components/TodoHeader';
+import { TodoCounter } from '../../Components/TodoCounter';
+import { TodoSearch } from '../../Components/TodoSearch';
+import { TodoList } from '../../Components/TodoList';
+import { TodoItem } from '../../Components/TodoItem';
+import { TodosError } from '../../Components/TodosError';
+import { TodosLoading } from '../../Components/TodosLoading';
+import { EmptyTodos } from '../../Components/EmptyTodos';
+import { TodoForm } from '../../Components/TodoForm';
+import { CreateTodoButton } from '../../Components/CreateTodoButton';
+import { Modal } from '../../Components/Modal';
+import { ChangeAlertWithStorageListener } from '../../Components/ChangeAlert';
+
+function HomePage() {
 
   const {
     error,
@@ -97,4 +98,4 @@ function App() {
   );
 }
 
-export default App;
+export  {HomePage};
