@@ -37,8 +37,6 @@ function useTodos(){
   // Función para añadir un nuevo TODO
   const addTodo = (text) => {
 
-    const id = newTodoId(todos);
-
     //Logica para validar si tiene texto para enviar
     if (!text.trim()) {
         alert("El nombre está vacío, escribe algo");
@@ -50,14 +48,13 @@ function useTodos(){
       id:todos.length + 1,
       completed: false,
       text,
-      id
     });
 
     saveTodos(newTodos);
   };
 
-  const completeTodo = (id) => {
-    const todoIndex = todos.findIndex(todo => todo.id === id);
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
     
     const newTodos = [...todos];
 
@@ -73,8 +70,8 @@ function useTodos(){
 
 
   //funcion de eliminar todo
-  const deleteTodo = (id) => {
-    const todoIndex = todos.findIndex(todo => todo.id === id);
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
   
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
@@ -97,17 +94,6 @@ function useTodos(){
           setOpenModal,
           sincronizeTodos,
     };
-};
-
-function newTodoId(todoList){
-  if(!todoList.length){
-    return 1
-  }
-
-  const idList = todoList.map(todo => todo.id);
-  const idMax = Math.max(idList);
-
-  return idMax + 1
 }
 
 export { useTodos };
