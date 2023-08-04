@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/Flexx-to-do-App/static/css/main.ebc0e290.css",
-    "main.js": "/Flexx-to-do-App/static/js/main.065c5cee.js",
+    "main.css": "/Flexx-to-do-App/static/css/main.3806e88a.css",
+    "main.js": "/Flexx-to-do-App/static/js/main.db24f3f5.js",
     "index.html": "/Flexx-to-do-App/index.html",
-    "main.ebc0e290.css.map": "/Flexx-to-do-App/static/css/main.ebc0e290.css.map",
-    "main.065c5cee.js.map": "/Flexx-to-do-App/static/js/main.065c5cee.js.map"
+    "static/media/delete.svg": "/Flexx-to-do-App/static/media/delete.d9c7e0eeb3f573572e1521b7b69ed33e.svg",
+    "static/media/edit.svg": "/Flexx-to-do-App/static/media/edit.569363b1fad8252af1f4f6e04345ba2e.svg",
+    "static/media/check.svg": "/Flexx-to-do-App/static/media/check.af03c9a6a0411e40578874e6f00e807b.svg",
+    "main.3806e88a.css.map": "/Flexx-to-do-App/static/css/main.3806e88a.css.map",
+    "main.db24f3f5.js.map": "/Flexx-to-do-App/static/js/main.db24f3f5.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebc0e290.css",
-    "static/js/main.065c5cee.js"
+    "static/css/main.3806e88a.css",
+    "static/js/main.db24f3f5.js"
   ]
 }
