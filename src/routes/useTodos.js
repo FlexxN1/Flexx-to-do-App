@@ -101,21 +101,27 @@ function useTodos(){
     saveTodos(newTodos);
   };
 
-    return {
-          loading,
-          error,
-          totalTodos,
-          completedTodos,
-          searchValue,
-          setSearchValue,
-          searchedTodos,
-          addTodo,
-          completeTodo,
-          deleteTodo,
-          sincronizeTodos,
-          editTodo,
-          getTodo
-    };
+  
+  const state = {
+    loading,
+    error,
+    totalTodos,
+    completedTodos,
+    searchValue,
+    searchedTodos,
+    getTodo,
+  };
+  
+  const stateUpdaters = {
+    setSearchValue,
+    addTodo,
+    completeTodo,
+    editTodo,
+    deleteTodo,
+    sincronizeTodos,
+  };
+
+  return { state, stateUpdaters };
 };
 
 function newTodoId(todoList) {

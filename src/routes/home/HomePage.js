@@ -16,22 +16,26 @@ import { ChangeAlertWithStorageListener } from '../../ui/ChangeAlert';
 
 function HomePage() {
   const navigate = useNavigate();
+  const { state, stateUpdaters } = useTodos();
 
-  const {
+   const {
     error,
     loading,
     searchedTodos,
-    completeTodo,
-    deleteTodo,
-    //openModal,
-    //setOpenModal,
     totalTodos,
     completedTodos,
+    // openModal,
     searchValue,
+  } = state;
+
+  const {
+    // setOpenModal,
+    // addTodo,
+    completeTodo,
+    deleteTodo,
     setSearchValue,
-    //addTodo,
     sincronizeTodos,
-  } = useTodos();
+  } = stateUpdaters;
   
   return (
     <>
