@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import './TodoForm.css';
 
-function TodoForm({ addTodo, setOpenModal }){
+function TodoForm(props){
+    const navigate = useNavigate();
+
     // Creamos un estado para nuestro nuevo TODO
-    const [newTodoValue, setNewTodoValue] = React.useState('');
+    const [newTodoValue, setNewTodoValue] = React.useState(props.defaultTodoText || '');
     
     // Creamos una función para actualizar el estado de nuestro nuevo TODO
     const onChange = (event) =>{
@@ -11,8 +14,9 @@ function TodoForm({ addTodo, setOpenModal }){
     }
 
     // Función para cerrar el modal
+
     const onCancel = () => {
-        setOpenModal(false);
+        navigate('/');
     };
 
     // Función para agregar nuestro nuevo TODO
@@ -21,22 +25,26 @@ function TodoForm({ addTodo, setOpenModal }){
         // prevent default para evitar recargar la página
         event.preventDefault();
         //si no tiene texto, no deja añadir
-        if(newTodoValue.length <= 0)return;
+        //if(newTodoValue.length <= 0)return;
 
         // Utilizamos nuestra función para añadir nuestro TODO
-        addTodo(newTodoValue);
+        //addTodo(newTodoValue);
 
         // Cerramos nustro modal
-        setOpenModal(false);
+        //setOpenModal(false);
         
         // También estaría bien resetear nuestro formulario
-        setNewTodoValue('')
+        //setNewTodoValue('')
+
+        props.submitEvent(newTodoValue);
+
+        navigate('/');
     }
 
 
     return (
         <form onSubmit={onSubmit}>
-        <label>Escribe tu nuevo ToDo</label>
+        <label>{props.label}</label>
         <textarea
             value={newTodoValue}
             onChange={onChange}
@@ -54,7 +62,7 @@ function TodoForm({ addTodo, setOpenModal }){
                 type="submit"
                 className="TodoForm-button TodoForm-button--add"
             >
-                Añadir
+                {props.submitText}
             </button>
         </div>
         </form>
