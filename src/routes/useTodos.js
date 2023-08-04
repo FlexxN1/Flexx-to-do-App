@@ -10,7 +10,7 @@ function useTodos(){
       sincronizeItem: sincronizeTodos,
       loading,
       error
-  } = useLocalStorage('TODOS_V1', []);
+  } = useLocalStorage('TODOS_V2', []);
 
   // El estado de nuestra búsqueda
   const [searchValue, setSearchValue] = React.useState('');
@@ -37,6 +37,8 @@ function useTodos(){
   // Función para añadir un nuevo TODO
   const addTodo = (text) => {
 
+    const id = newTodoId(todos);
+
     //Logica para validar si tiene texto para enviar
     if (!text.trim()) {
         alert("El nombre está vacío, escribe algo");
@@ -47,14 +49,15 @@ function useTodos(){
     newTodos.push({
       id:todos.length + 1,
       completed: false,
-      text
+      text,
+      id
     });
 
     saveTodos(newTodos);
   };
 
-  const completeTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text);
+  const completeTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id);
     
     const newTodos = [...todos];
 
@@ -70,8 +73,8 @@ function useTodos(){
 
 
   //funcion de eliminar todo
-  const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text);
+  const deleteTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id);
   
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
@@ -95,5 +98,13 @@ function useTodos(){
           sincronizeTodos,
     };
 };
+
+function newTodoId(todoList){
+  
+  const idList = todoList.map(todo => todo.id);
+  const idMax = Math.max(idList);
+
+  return idMax + 1
+}
 
 export { useTodos };
