@@ -23,18 +23,18 @@ function HomePage() {
     searchedTodos,
     completeTodo,
     deleteTodo,
-    openModal,
-    setOpenModal,
+    //openModal,
+    //setOpenModal,
     totalTodos,
     completedTodos,
     searchValue,
     setSearchValue,
-    addTodo,
+    //addTodo,
     sincronizeTodos,
   } = useTodos();
   
   return (
-    <React.Fragment>
+    <>
       <TodoHeader loading={loading}>
         <TodoCounter
           totalTodos={totalTodos}
@@ -87,23 +87,25 @@ function HomePage() {
         )}
       </TodoList>
 
-      {!!openModal && (
+
+      {/* {!!openModal && (
         <Modal>
-          <TodoForm 
+          <TodoForm
             addTodo={addTodo}
             setOpenModal={setOpenModal}
           />
         </Modal>
-      )}
+      )} */}
 
       <CreateTodoButton
-        setOpenModal={setOpenModal}
+        onClick={() => navigate('/new')}
+        // setOpenModal={setOpenModal}
       />
 
       <ChangeAlertWithStorageListener 
         sincronize={sincronizeTodos}
       />
-    </React.Fragment>
+    </>
   );
 }
 

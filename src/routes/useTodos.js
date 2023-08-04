@@ -14,7 +14,6 @@ function useTodos(){
 
   // El estado de nuestra búsqueda
   const [searchValue, setSearchValue] = React.useState('');
-  const [openModal, setOpenModal] = React.useState(false);
 
       // Cantidad de TODOs completados
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -48,7 +47,6 @@ function useTodos(){
     const newTodos = [...todos]
 
     newTodos.push({
-      idd:todos.length + 1,
       completed: false,
       text,
       id
@@ -114,8 +112,6 @@ function useTodos(){
           addTodo,
           completeTodo,
           deleteTodo,
-          openModal,
-          setOpenModal,
           sincronizeTodos,
           editTodo,
           getTodo
