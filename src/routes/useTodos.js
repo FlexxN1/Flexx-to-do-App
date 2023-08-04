@@ -36,6 +36,8 @@ function useTodos(){
 
   // Función para añadir un nuevo TODO
   const addTodo = (text) => {
+  
+    const id = newTodoId(todos)
 
     //Logica para validar si tiene texto para enviar
     if (!text.trim()) {
@@ -43,18 +45,26 @@ function useTodos(){
         return;
     }
 
-    const newTodos = [...todos];
+    const newTodos = [...todos]
+
     newTodos.push({
-      id:todos.length + 1,
+      idd:todos.length + 1,
       completed: false,
       text,
+      id
     });
 
     saveTodos(newTodos);
   };
 
-  const completeTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text);
+  
+  const getTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id);
+    return todos[todoIndex];
+  }
+
+  const completeTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id);
     
     const newTodos = [...todos];
 
@@ -68,10 +78,24 @@ function useTodos(){
     saveTodos(newTodos);
   };
 
+  const editTodo = (id, newText) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id);
+    
+    const newTodos = [...todos];
+
+    //otra forma
+    newTodos[todoIndex].text = newText // por si marco por error el chulo de completado, lo podre desmarcar 
+    //otra forma
+    //newTodos[todoIndex] = {
+    // text: todos[todoIndex].text,
+    // completed: true
+
+    saveTodos(newTodos);
+  };
 
   //funcion de eliminar todo
-  const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text);
+  const deleteTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id);
   
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
@@ -93,7 +117,20 @@ function useTodos(){
           openModal,
           setOpenModal,
           sincronizeTodos,
+          editTodo,
+          getTodo
     };
+};
+
+function newTodoId(todoList) {
+  if (!todoList.length) {
+    return 1;
+  }
+  
+  const idList = todoList.map(todo => todo.id);
+  const idMax = Math.max(...idList);
+  return idMax + 1;
 }
+
 
 export { useTodos };

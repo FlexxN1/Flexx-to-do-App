@@ -11,6 +11,7 @@ function TodoForm({ addTodo, setOpenModal }){
     }
 
     // Función para cerrar el modal
+
     const onCancel = () => {
         setOpenModal(false);
     };

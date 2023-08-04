@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTodos } from '../useTodos';
 import { TodoHeader } from '../../ui/TodoHeader';
 import { TodoCounter } from '../../ui/TodoCounter';
@@ -14,6 +15,7 @@ import { Modal } from '../../ui/Modal';
 import { ChangeAlertWithStorageListener } from '../../ui/ChangeAlert';
 
 function HomePage() {
+  const navigate = useNavigate();
 
   const {
     error,
@@ -71,6 +73,14 @@ function HomePage() {
             key={todo.id}
             text={todo.text}
             completed={todo.completed}
+            onEdit={() => {
+              navigate(
+                '/edit/' + todo.id,
+                {
+                  state: { todo }
+                },
+              );
+            }}
             onComplete={() => completeTodo(todo.id)}
             onDelete={() => deleteTodo(todo.id)}
           />
@@ -97,4 +107,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export {HomePage};
